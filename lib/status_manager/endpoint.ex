@@ -3,6 +3,9 @@ defmodule StatusManager.Endpoint do
 
   socket "/socket", StatusManager.UserSocket
 
+  plug StatusManager.Instrumentation.PlugExporter
+  plug StatusManager.Instrumentation.PlugPipeline
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest

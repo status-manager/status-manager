@@ -15,7 +15,8 @@ config :status_manager, StatusManager.Endpoint,
   secret_key_base: "bVfRFyzLv4kpDeNVmPD+Ysr98Na1h5Tyk7Em4CAikyMTchg1uGjoB92Bpu67MwF6",
   render_errors: [view: StatusManager.ErrorView, accepts: ~w(html json)],
   pubsub: [name: StatusManager.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  instrumenters: [StatusManager.Instrumentation.Endpoint]
 
 # Configures Elixir's Logger
 config :logger, :console,

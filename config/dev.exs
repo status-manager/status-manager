@@ -40,4 +40,5 @@ config :status_manager, StatusManager.Repo,
   password: "postgres",
   database: "status_manager_dev",
   hostname: "localhost",
-  pool_size: 10
+  pool_size: 10,
+  loggers: [StatusManager.Instrumentation.Repo, Ecto.LogEntry]

@@ -7,6 +7,11 @@ defmodule StatusManager do
   def start(_type, _args) do
     import Supervisor.Spec
 
+    StatusManager.Instrumentation.PlugExporter.setup()
+    StatusManager.Instrumentation.PlugPipeline.setup()
+    StatusManager.Instrumentation.Endpoint.setup()
+    StatusManager.Instrumentation.Repo.setup()
+
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
