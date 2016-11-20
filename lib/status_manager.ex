@@ -3,6 +3,7 @@ defmodule StatusManager do
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
+  @lint {Credo.Check.Readability.MaxLineLength, false}
   def start(_type, _args) do
     import Supervisor.Spec
 

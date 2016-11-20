@@ -37,7 +37,9 @@ defmodule StatusManager.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},    
+     {:credo, git: "https://github.com/rrrene/credo", only: [:dev, :test]},
+     {:ex_doc, "~> 0.14", only: :dev}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
