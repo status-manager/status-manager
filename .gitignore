@@ -1,0 +1,13 @@
+/_build
+/deps
+/cover
+/doc
+erl_crash.dump
+*.ez
+/node_modules
+.sass-cache
+/tmp
+*~
+.#*
+#*
+*#
