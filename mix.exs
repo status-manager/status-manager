@@ -10,7 +10,9 @@ defmodule StatusManager.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
-     deps: deps()]
+     deps: deps(),    
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: ["coveralls": :test, "coveralls.html": :test],]
   end
 
   # Configuration for the OTP application.
@@ -37,8 +39,13 @@ defmodule StatusManager.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"},    
-     {:credo, git: "https://github.com/rrrene/credo", only: [:dev, :test]},
+     {:cowboy, "~> 1.0"},
+     {:prometheus_process_collector, "~> 1.0"},
+     {:prometheus_plugs,"~> 1.1"},
+     {:prometheus_ecto, "~> 1.0"},
+     {:prometheus_phoenix, "~> 1.0"},
+     {:credo, git: "https://github.com/rrrene/credo", only: [:dev, :test]},     
+     {:excoveralls, "~> 0.5", only: :test},
      {:ex_doc, "~> 0.14", only: :dev}]
   end
 
